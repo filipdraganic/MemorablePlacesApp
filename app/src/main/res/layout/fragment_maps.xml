@@ -5,4 +5,4 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.view.fragments.MapsFragment" />
+    tools:context="rs.raf.filip_draganic_RN54_2017.presentation.view.fragments.MapsFragment" />
