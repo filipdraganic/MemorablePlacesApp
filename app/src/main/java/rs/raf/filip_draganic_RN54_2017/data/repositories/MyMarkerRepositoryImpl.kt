@@ -61,13 +61,19 @@ class MyMarkerRepositoryImpl(private val localDataSource: MyMarkerDao) : MyMarke
     override fun updateMyMarker(myMarker: MyMarker): Completable {
         val mymarkerEntity = MyMarkerEntity(myMarker.id, myMarker.title, myMarker.note, myMarker.latitude, myMarker.longitude, Converters().dateToTimestamp(myMarker.date))
 
+        Timber.e("UPDATEOVANJE U TOKU")
+        Timber.e(myMarker.toString())
         return localDataSource
             .updateMyMarker(mymarkerEntity)
 
     }
 
     override fun delete(myMarker: MyMarker): Completable {
-        TODO("Not yet implemented")
+        val mymarkerEntity = MyMarkerEntity(myMarker.id, myMarker.title, myMarker.note, myMarker.latitude, myMarker.longitude, Converters().dateToTimestamp(myMarker.date))
+
+        return localDataSource
+            .delete(mymarkerEntity)
+
     }
 
 }

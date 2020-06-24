@@ -16,6 +16,7 @@ class MyMarkerContract {
         fun insert(myMarker: MyMarker)
         fun getSearchQuery(searchQuery: String, fabGore: Boolean)
         fun updateMyMarker(myMarker: MyMarker)
+        fun delete(myMarker: MyMarker)
 
     }
 }

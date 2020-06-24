@@ -7,8 +7,8 @@ import java.util.*
 @Parcelize
 data class MyMarker (
     val id: Long,
-    val title: String,
-    val note: String,
+    var title: String,
+    var note: String,
     val latitude: Double,
     val longitude: Double,
     val date: Date

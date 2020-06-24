@@ -1,5 +1,6 @@
 package rs.raf.filip_draganic_RN54_2017.presentation.recycler.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import kotlinx.android.synthetic.main.savedlocation_item.*
 import rs.raf.filip_draganic_RN54_2017.data.models.MyMarker
 import rs.raf.filip_draganic_RN54_2017.presentation.recycler.diff.MyMarkerDiff
 import rs.raf.filip_draganic_RN54_2017.presentation.recycler.viewholders.MyMarkerViewHolder
+import rs.raf.filip_draganic_RN54_2017.presentation.view.activity.EditMapsActivity
 import timber.log.Timber
 
 class MyMarkerAdapter(myMarkerDiff: MyMarkerDiff) :ListAdapter<MyMarker, MyMarkerViewHolder>(myMarkerDiff) {
@@ -20,6 +22,15 @@ class MyMarkerAdapter(myMarkerDiff: MyMarkerDiff) :ListAdapter<MyMarker, MyMarke
 
         holder.itemView.setOnClickListener(View.OnClickListener {
             Timber.e(marker.title)
+
+
+            val intent = Intent(holder.containerView.context, EditMapsActivity::class.java)
+
+            intent.putExtra("myMarker", marker)
+
+            holder.containerView.context.startActivity(intent)
+
+
         })
 
         holder.bind(marker)

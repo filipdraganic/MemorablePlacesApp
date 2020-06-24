@@ -30,6 +30,6 @@ interface MyMarkerDao{
     fun deleteAll(vararg myMarker: MyMarkerEntity): Completable
 
     @Update
-    fun updateMyMarker(vararg myMarker: MyMarkerEntity): Completable
+    fun updateMyMarker(myMarker: MyMarkerEntity): Completable
 
 }

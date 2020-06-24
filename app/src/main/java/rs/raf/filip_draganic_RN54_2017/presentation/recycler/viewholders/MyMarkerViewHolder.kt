@@ -10,7 +10,6 @@ class MyMarkerViewHolder(override val containerView: View): RecyclerView.ViewHol
 
 
 
-
     fun bind(myMarker: MyMarker){
 
         titleTV.text = myMarker.title

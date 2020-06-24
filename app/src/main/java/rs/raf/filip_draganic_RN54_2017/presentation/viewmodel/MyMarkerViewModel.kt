@@ -1,5 +1,6 @@
 package rs.raf.filip_draganic_RN54_2017.presentation.viewmodel
 
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -116,5 +117,25 @@ class MyMarkerViewModel(private val myMarkerRepository: MyMarkerRepository): Vie
             )
         subscriptions.add(subscription)
     }
+
+    override fun delete(myMarker: MyMarker) {
+
+        val subscription = myMarkerRepository
+            .delete(myMarker)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    myMarkerState.value = MyMarkerState.Delete
+                    Timber.e("Uspesno Brisanje")
+                },
+                {
+                    myMarkerState.value = MyMarkerState.Error("Error while deleting marker")
+                    Timber.e("Neuspesno brisanje")
+                    Timber.e(it)
+                }
+            )
+    }
+
 
 }
