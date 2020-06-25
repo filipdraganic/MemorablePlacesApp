@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.memorableplacesapp.R
@@ -109,19 +110,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      * installed Google Play services and returned to the app.
      */
     override fun onMapReady(googleMap: GoogleMap) {
+
+
+
+
         mMap = googleMap
 
         this.map = googleMap
-        // Add a marker in Sydney and move the camera
-
-
-
 
         getLocationPermission()
-
-        updateLocationUI()
-
-        getDeviceLocation()
 
     }
 
@@ -133,6 +130,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 Manifest.permission.ACCESS_FINE_LOCATION)
             == PackageManager.PERMISSION_GRANTED) {
             locationPermissionGranted = true
+            updateLocationUI()
+            getDeviceLocation()
+
+
         }
         else {
             Timber.e("Usao u else")
@@ -141,6 +142,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             )
         }
     }
+
 
 
     override fun onRequestPermissionsResult(requestCode: Int,
@@ -154,11 +156,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 if (grantResults.isNotEmpty() &&
                     grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     locationPermissionGranted = true
+                    updateLocationUI()
+                    getDeviceLocation()
+
+
+                }
+                else{
+                    Toast.makeText(this, "This app needs location permission, shutting down now.", Toast.LENGTH_LONG).show()
+                    Timber.e("Denied")
+                    finish()
                 }
 
             }
         }
-        updateLocationUI()
     }
 
 

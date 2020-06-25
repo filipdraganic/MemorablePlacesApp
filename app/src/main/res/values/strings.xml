@@ -2,4 +2,7 @@
     <string name="app_name">Memorable places app</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_edit_maps">Map</string>
+    <string name="note">Note:</string>
+    <string name="title">Title:</string>
+    <string name="date_added">Date added:</string>
 </resources>

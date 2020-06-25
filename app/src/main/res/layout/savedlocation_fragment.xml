@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="10dp"
         android:backgroundTint="@color/colorPrimaryDark"
-        android:src="@drawable/ic_baseline_keyboard_arrow_up_24"
+        android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
 
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -53,11 +53,11 @@ class SavedLocationsFragment : Fragment(R.layout.savedlocation_fragment){
 
 
         if (fabGore == true){
-             FAB.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
+             FAB.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
         }
         else{
 
-            FAB.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
+            FAB.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
         }
 
         myMarkerViewModel.getSearchQuery(searchET.text.toString(), fabGore)
