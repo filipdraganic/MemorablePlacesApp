@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="rs.raf.filip_draganic_RN54_2017.presentation.view.activity.MapsActivity"
+    tools:context="rs.raf.projekat3.filip_draganic_RN54_2017.presentation.view.activity.MapsActivity"
 
     android:layout_height="match_parent"
     android:layout_width="match_parent"
